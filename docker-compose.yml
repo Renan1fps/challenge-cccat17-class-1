@@ -13,7 +13,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - C:/Users/Renan/Documents/dev/cccat17_1:/docker-entrypoint-initdb.d
+      - ${LOCAL_PATH}:/docker-entrypoint-initdb.d
     networks:
       - dev-network
 
