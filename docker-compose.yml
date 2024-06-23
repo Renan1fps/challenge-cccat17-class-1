@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  # =================================================
+  # POSTGRES SERVER
+  # =================================================
+  pg-docker:
+    image: postgres:14-alpine
+    container_name: dev-postgresql
+    environment:
+      POSTGRES_USER: db-user
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: mydb
+    ports:
+      - 5432:5432
+    volumes:
+      - C:/Users/Renan/Documents/dev/cccat17_1:/docker-entrypoint-initdb.d
+    networks:
+      - dev-network
+
+# =================================================
+# REDE
+# =================================================
+networks:
+  dev-network:
+    driver: bridge
